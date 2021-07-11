@@ -11,6 +11,6 @@ public class n1 {
 
         scan.close();
 
-        System.out.printf("\r\nพื้นที่ของวงกลม คือ %.2f", Math.PI * (r * r));
+        System.out.println("พื้นที่ของวงกลม คือ "+ Math.PI * (r * r));
     }
 }

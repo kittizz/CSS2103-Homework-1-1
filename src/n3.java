@@ -18,12 +18,12 @@ public class n3 {
     }
     static void methodA (int n) {
         for(int i=n; i>1; i-=2)
-            System.out.println("methodA"+i);
+            System.out.println(i);
     }
     static void methodB (int n) {
         for(int i=1; i<n; i++){
             for(int j=n;j>n-i;j--){
-                System.out.println("methodB"+i);
+                System.out.println(i);
             }
         }
     }
@@ -36,13 +36,13 @@ public class n3 {
     }
     static void fun (int n) {
         for(int i=1; i<n; i=i*3){
-            System.out.println("methodC"+i);
+            System.out.println(i);
         }
     }
     static void methodD (int n) {
         for(int i=n; i<=n; i++){
             for(int j=n;j>1;j=j/2){
-                System.out.println("methodD"+j);
+                System.out.println(j);
             }
         }
     }
@@ -50,23 +50,23 @@ public class n3 {
         if(ch =='a'){
             for(int s=1;s<n;s++)
                 for(int t=1; t<n; t=t*4){
-                    System.out.println("a methodE"+t);
+                    System.out.println(t);
                 }
         }
         else if (ch == 'b'){
             for(int i=0;i<n;i++){
-                System.out.println("b methodE"+i);
+                System.out.println(i);
             }
         }
         else if (ch == 'c'){
             for(int i=0; i<n;i++){
-                System.out.println("c methodE"+i);
+                System.out.println(i);
             }
         }
         else{
             for(int k=n;k>1;k--)
                 for(int m=1; m<k;m++){
-                    System.out.println("errors methodE"+m);
+                    System.out.println(m);
                 }
         }
 
