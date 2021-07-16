@@ -1,0 +1,57 @@
+Algorithm FindFakeCoin
+    Begin
+        coin = 1 ,1 ,1 ,1 ,1 ,1 ,1 ,0 ,1
+        Print "Weighing 1"
+        Weighing_1 = BalanceScale Tray(coin[0],coin[1],coin[2]) Between Tray(coin[3],coin[4],coin[5] )
+        IF Weighing_1 = "BALANCED" THEN
+            Print "Weighing 2"
+            Weighing_2 = BalanceScale coin[6] Between coin[7]
+            IF Weighing_2 = "BALANCED" THEN
+                Print "fake coin is 9"
+                END
+            IF Weighing_2 = "LEFT" THEN
+                Print "fake coin is 8"
+                END
+            Print "fake coin is 7"
+        ELSE
+            //ถ้าซ้ายมาก เอาขวามาแบ่งชั่ง
+            IF Weighing_1 = "LEFT"
+                Print "Weighing 2"
+                BalanceType Weighing_2 = BalanceScale coin[3] Between coin[4]
+                IF Weighing_2 = "BALANCED"
+                    Print "fake coin is 6"
+                    END
+                IF Weighing_2 = "LEFT"
+                    Print "fake coin is 5"
+                    END
+                Print "fake coin is 4"
+
+            IF Weighing_1 = "RIGHT"
+                Print "Weighing 2"
+                BalanceType Weighing_2 = BalanceScale coin[0] Between coin[1]
+                IF Weighing_2 = "BALANCED"
+                    Print "fake coin is 3"
+                    END
+                IF Weighing_2 = "LEFT"
+                    Print "fake coin is 2"
+                    END
+                Print "fake coin is 1"
+End FindFakeCoin
+
+
+Function BalanceScale(left ,right)
+    IF left = right THEN
+        Return "BALANCED"
+    IF left > right THEN
+        Return "LEFT"
+    Return "RIGHT"
+Endfunction
+
+
+Function Tray(... coins)
+    SET Sum to 0
+    FOR each element in the coins
+      ADD element to Sum
+    ENDFOR
+Endfunction
+
